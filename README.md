@@ -1,6 +1,6 @@
 # Amanda Russom
 ****
-## Southeast Missouri State
+## Southeast Missouri State University
 ****
 ### Fav Video
 I love this clip of [Mr.Bean](https://www.youtube.com/watch?v=9LhLjpsstPY). As a teacher, I find it relates to my **daily** struggle in the classroom to keep students honest.  Even though the show is somewhat dated, *most* of my students enjoying watching clips occassionally.
