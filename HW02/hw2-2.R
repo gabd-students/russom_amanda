@@ -121,11 +121,22 @@ cultures_with_pplo[c('Day 2', 'Day 4')]
 
 ## use cell_counts_without_pplo to create a logical vector for cell counts greater than 100000
 
-cell_counts_without_pplo_greater_than_100000 <- c(cell_counts_without_pplo>100000)
+cell_counts_without_pplo_greater_than_100000 <- cell_counts_without_pplo>100000
 
-##use that vector to show the days from culture_without_pplo greater than 100000
+## use that vector to show the days and actual cell count from culture_without_pplo greater than 100000
 
-cell_counts_without_pplo_greater_than_100000
+cell_counts_without_pplo[cell_counts_without_pplo_greater_than_100000]
+
+## use cell_counts_with_pplo to create a vector for cell counts >50000 and <75000
+
+cell_counts_with_pplo_btwn_50000_75000 <- cell_counts_with_pplo>50000 & cell_counts_with_pplo<75000
+
+## use that vector to show the days and actual cell count from cultures_with_pplo
+
+cell_counts_with_pplo[cell_counts_with_pplo_btwn_50000_75000]
+
+
+
 
 
 
