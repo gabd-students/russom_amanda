@@ -10,6 +10,8 @@ editor_options:
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 ```{r}
 library(tidyverse)
+library(knitr)
+library(xtable)
 ```
 
 ```{r}
@@ -45,4 +47,55 @@ ansc <-
   as_tibble()
 ```
 
+```{r}
+ansc %>% ggplot(aes(x, y, color = dataset)) +
+  geom_point() +
+  facet_wrap(~dataset, ncol = 2)
+``
+```
 
+
+```{r}
+head(iris)
+```
+
+
+```{r}
+kable(head(iris), 
+      align= c("l", "c", "r", "c", "l"),
+      col.names = c("Sepal Length", "Sepal Width", "Sepal Length", "Sepal Width", "Species"))
+```
+
+```{r}
+kable(head(airquality), 
+      align= c("r", "r", "c", "c", "l", "l"),
+      col.names = c("Ozone (ppb)", "Solar R (lang)", " Wind (mph)", "Temp (°F)", "Month", "Day"))
+```
+```{r}
+kable(chicks_lm)
+```
+
+```{r}
+ chicks_lm <- lm(weight ~ feed, data = chickwts)
+```
+
+```{r}
+summary(chicks_lm)
+```
+```{r}
+kable(chicks_lm)
+```
+ 
+I attempted to run kable(chicks_lm) in both the console and as script and received an error message both times.
+
+```{r}
+trees_lm <- lm(Girth ~ Height, data = trees)
+```
+
+```{r}
+xtable(trees_lm) %>% kable()
+```
+footnote: Not a fan, sorry..... :/
+
+ 
+ 

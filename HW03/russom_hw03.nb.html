@@ -1756,20 +1756,128 @@ summary {
 <p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGtuaXRyKVxubGlicmFyeSh4dGFibGUpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)
+library(knitr)
+library(xtable)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5zY29tYmVcbmBgYCJ9 -->
-<pre class="r"><code>anscombe</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYW5zY29tYmVcbmBgYFxuYGBgIn0= -->
+<pre class="r"><code>```r
+anscombe</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjoiZGF0YS5mcmFtZSIsIm5yb3ciOjExLCJuY29sIjo4fSwicmRmIjoiSDRzSUFBQUFBQUFBQnQxVE96TURVUlMrbGhDYjhZNElpV1FUajBrTW1VbENtWmt6bUtGUW9GSm9WZ1Fac1J2SkdrS2pTYVB4RHpRVUtuVnFXbXExbWtKRGlmczQ5ekpibU5HNk01dnZ1K2Z4ZmVmc1pGZm4xN0w2bWs0SWFTWXRSQ1BOSGtwSjY5eHlPak9USWFSRm83Y21tbWxuZUVTcitpangwcWVUUGo0WUpmeUFnVGlCR0VjY1I1eEVEQ0oySXlZUXc0aCtJcy8vMEplNmY4WHM3L2x2ZmYveDA4S05IMEwzN0R4QVpPVzVIbW1zUXV5aVFWa1VqT3UzMi9QMUpJeXc4TW9MaE5rMThRNDllcTU4K2FqRDJBMFhnTDRGUmhZaDBPQUNTaitPY1FNeHh1MU9JSFltK3VOTTlya09ScFlmQ09MZGkvUEVaNm5kMngwTW8xK3Y4RmY2dzQ4OEFTSGNJNG42WVZhZDI0Y29iOHRCRE9jTTRuNzlUUGIySEl3bDRUT0krWURZVStrUFlmMEEra2ZRVCtvWnI4SW5uQkR2cVIvZmN4SXhnUDVSOWx1K2dwRHdkWDBZSHN2Y0sxUXBZWDhMTHdhMW83UmlHY1d5aWsxTFZsTjFOVlZYVTNXMWFaZFplOFUrVEVuRERsWnlLb2IxdWFmS2w4eXFuRW9HOVUzVE1WTmJGZHBQYngrdWxqYTc3QlJ0aXpacDdEdjN1SnFiS3E1QTE0SEZKdG1jeXU4Y1dMdFRNOHlBcDhYcFFPNzd3YjNDVXZ0RUtROUt0UmFzN2FKVmtMT1h6STFDQ1MrZGRHTytjS3BjS1ZxTzNJUkdxeW5IZGt4WnArZnRrb3p3M2NqSEYwMXpNWlBmQkFBQSJ9 --&gt;
+
+&lt;div data-pagedtable=&quot;false&quot;&gt;
+  &lt;script data-pagedtable-source type=&quot;application/json&quot;&gt;
+{&quot;columns&quot;:[{&quot;label&quot;:[&quot;x1&quot;],&quot;name&quot;:[1],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;x2&quot;],&quot;name&quot;:[2],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;x3&quot;],&quot;name&quot;:[3],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;x4&quot;],&quot;name&quot;:[4],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;y1&quot;],&quot;name&quot;:[5],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;y2&quot;],&quot;name&quot;:[6],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;y3&quot;],&quot;name&quot;:[7],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]},{&quot;label&quot;:[&quot;y4&quot;],&quot;name&quot;:[8],&quot;type&quot;:[&quot;dbl&quot;],&quot;align&quot;:[&quot;right&quot;]}],&quot;data&quot;:[{&quot;1&quot;:&quot;10&quot;,&quot;2&quot;:&quot;10&quot;,&quot;3&quot;:&quot;10&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;8.04&quot;,&quot;6&quot;:&quot;9.14&quot;,&quot;7&quot;:&quot;7.46&quot;,&quot;8&quot;:&quot;6.58&quot;},{&quot;1&quot;:&quot;8&quot;,&quot;2&quot;:&quot;8&quot;,&quot;3&quot;:&quot;8&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;6.95&quot;,&quot;6&quot;:&quot;8.14&quot;,&quot;7&quot;:&quot;6.77&quot;,&quot;8&quot;:&quot;5.76&quot;},{&quot;1&quot;:&quot;13&quot;,&quot;2&quot;:&quot;13&quot;,&quot;3&quot;:&quot;13&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;7.58&quot;,&quot;6&quot;:&quot;8.74&quot;,&quot;7&quot;:&quot;12.74&quot;,&quot;8&quot;:&quot;7.71&quot;},{&quot;1&quot;:&quot;9&quot;,&quot;2&quot;:&quot;9&quot;,&quot;3&quot;:&quot;9&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;8.81&quot;,&quot;6&quot;:&quot;8.77&quot;,&quot;7&quot;:&quot;7.11&quot;,&quot;8&quot;:&quot;8.84&quot;},{&quot;1&quot;:&quot;11&quot;,&quot;2&quot;:&quot;11&quot;,&quot;3&quot;:&quot;11&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;8.33&quot;,&quot;6&quot;:&quot;9.26&quot;,&quot;7&quot;:&quot;7.81&quot;,&quot;8&quot;:&quot;8.47&quot;},{&quot;1&quot;:&quot;14&quot;,&quot;2&quot;:&quot;14&quot;,&quot;3&quot;:&quot;14&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;9.96&quot;,&quot;6&quot;:&quot;8.10&quot;,&quot;7&quot;:&quot;8.84&quot;,&quot;8&quot;:&quot;7.04&quot;},{&quot;1&quot;:&quot;6&quot;,&quot;2&quot;:&quot;6&quot;,&quot;3&quot;:&quot;6&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;7.24&quot;,&quot;6&quot;:&quot;6.13&quot;,&quot;7&quot;:&quot;6.08&quot;,&quot;8&quot;:&quot;5.25&quot;},{&quot;1&quot;:&quot;4&quot;,&quot;2&quot;:&quot;4&quot;,&quot;3&quot;:&quot;4&quot;,&quot;4&quot;:&quot;19&quot;,&quot;5&quot;:&quot;4.26&quot;,&quot;6&quot;:&quot;3.10&quot;,&quot;7&quot;:&quot;5.39&quot;,&quot;8&quot;:&quot;12.50&quot;},{&quot;1&quot;:&quot;12&quot;,&quot;2&quot;:&quot;12&quot;,&quot;3&quot;:&quot;12&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;10.84&quot;,&quot;6&quot;:&quot;9.13&quot;,&quot;7&quot;:&quot;8.15&quot;,&quot;8&quot;:&quot;5.56&quot;},{&quot;1&quot;:&quot;7&quot;,&quot;2&quot;:&quot;7&quot;,&quot;3&quot;:&quot;7&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;4.82&quot;,&quot;6&quot;:&quot;7.26&quot;,&quot;7&quot;:&quot;6.42&quot;,&quot;8&quot;:&quot;7.91&quot;},{&quot;1&quot;:&quot;5&quot;,&quot;2&quot;:&quot;5&quot;,&quot;3&quot;:&quot;5&quot;,&quot;4&quot;:&quot;8&quot;,&quot;5&quot;:&quot;5.68&quot;,&quot;6&quot;:&quot;4.74&quot;,&quot;7&quot;:&quot;5.73&quot;,&quot;8&quot;:&quot;6.89&quot;}],&quot;options&quot;:{&quot;columns&quot;:{&quot;min&quot;:{},&quot;max&quot;:[10],&quot;total&quot;:[8]},&quot;rows&quot;:{&quot;min&quot;:[10],&quot;max&quot;:[10],&quot;total&quot;:[11]},&quot;pages&quot;:{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;!-- rnb-frame-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYW5zYyA8LSBcbiAgYmluZF9jb2xzKFxuICAgIGFuc2NvbWJlICU+JSBcbiAgICAgIHNlbGVjdChtYXRjaGVzKFxceFxcKSkgJT4lIFxuICAgICAgZ2F0aGVyKGRhdGFzZXQsIFxceFxcKSxcbiAgICBhbnNjb21iZSAlPiUgXG4gICAgICBzZWxlY3QobWF0Y2hlcyhcXHlcXCkpICU+JSBcbiAgICAgIGdhdGhlcihrZXksIFxceVxcKVxuICApICU+JSBcbiAgc2VsZWN0KC1rZXkpICU+JSBcbiAgbXV0YXRlKGRhdGFzZXQgPSBnc3ViKFxceFxcLCBcXFxcLCBkYXRhc2V0KSkgJT4lXG4gIGFzX3RpYmJsZSgpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+ansc &lt;- 
+  bind_cols(
+    anscombe %&gt;% 
+      select(matches(\x\)) %&gt;% 
+      gather(dataset, \x\),
+    anscombe %&gt;% 
+      select(matches(\y\)) %&gt;% 
+      gather(key, \y\)
+  ) %&gt;% 
+  select(-key) %&gt;% 
+  mutate(dataset = gsub(\x\, \\, dataset)) %&gt;%
+  as_tibble()</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYW5zYyA8LVxuICBiaW5kX2NvbHMoXG4gICAgYW5zY29tYmUgJT4lIFxuICAgICAgc2VsZWN0KG1hdGNoZXMoXFx4XFwpKSAlPiUgXG4gICAgICBnYXRoZXIoZGF0YXNldCwgXFx4XFwpLFxuICAgIGFuc2NvbWJlICU+JSBcbiAgICAgIHNlbGVjdChtYXRjaGVzKFxceVxcKSkgJT4lIFxuICAgICAgZ2F0aGVyKGtleSwgXFx5XFwpXG4gICkgJT4lXG4gIHNlbGVjdCgta2V5KSAlPiUgXG4gIG11dGF0ZShkYXRhc2V0ID0gZ3N1YihcXHhcXCwgXFxcXCwgZGF0YXNldCkpICU+JSAgXG4gIGFzX3RpYmJsZSgpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+ansc &lt;-
+  bind_cols(
+    anscombe %&gt;% 
+      select(matches(\x\)) %&gt;% 
+      gather(dataset, \x\),
+    anscombe %&gt;% 
+      select(matches(\y\)) %&gt;% 
+      gather(key, \y\)
+  ) %&gt;%
+  select(-key) %&gt;% 
+  mutate(dataset = gsub(\x\, \\, dataset)) %&gt;%  
+  as_tibble()</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5zYyAlPiUgZ2dwbG90KGFlcyh4LCB5LCBjb2xvciA9IGRhdGFzZXQpKSArXG4gIGdlb21fcG9pbnQoKSArXG4gIGZhY2V0X3dyYXAofmRhdGFzZXQsIG5jb2wgPSAyKVxuYGBgIn0= --&gt;
+
+```r
+ansc %&gt;% ggplot(aes(x, y, color = dataset)) +
+  geom_point() +
+  facet_wrap(~dataset, ncol = 2)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MTEsIm5jb2wiOjh9LCJyZGYiOiJINHNJQUFBQUFBQUFCdDFUT3pNRFVSUytsaENiOFk0SWlXUVRqMGtNbVVsQ21aa3ptS0ZRb0ZKb1ZnUVpzUnZKR2tLalNhUHhEelFVS25WcVdtcTFta0pEaWZzNDl6SmJtTkc2TTV2dnUrZnhmZWZzWkZmbjE3TDZtazRJYVNZdFJDUE5Ia3BKNjl4eU9qT1RJYVJGbzdjbW1tbG5lRVNyK2lqeDBxZVRQajRZSmZ5QWdUaUJHRWNjUjV4RURDSjJJeVlRdzRoK0lzLy8wSmU2ZjhYczcvbHZmZi94MDhLTkgwTDM3RHhBWk9XNUhtbXNRdXlpUVZrVWpPdTMyL1AxSkl5dzhNb0xoTmsxOFE0OWVxNTgrYWpEMkEwWGdMNEZSaFloME9BQ1NqK09jUU14eHUxT0lIWW0rdU5NOXJrT1JwWWZDT0xkaS9QRVo2bmQyeDBNbzErdjhGZjZ3NDg4QVNIY0k0bjZZVmFkMjRjb2I4dEJET2NNNG43OVRQYjJISXdsNFRPSStZRFlVK2tQWWYwQStrZlFUK29acjhJbm5CRHZxUi9mY3hJeGdQNVI5bHUrZ3BEd2RYMFlIc3ZjSzFRcFlYOExMd2ExbzdSaUdjV3lpazFMVmxOMU5WVlhVM1cxYVpkWmU4VStURW5ERGxaeUtvYjF1YWZLbDh5cW5Fb0c5VTNUTVZOYkZkcFBieCt1bGphNzdCUnRpelpwN0R2M3VKcWJLcTVBMTRIRkp0bWN5dThjV0x0VE04eUFwOFhwUU83N3diM0NVdnRFS1E5S3RSYXM3YUpWa0xPWHpJMUNDUytkZEdPK2NLcGNLVnFPM0lSR3F5bkhka3hacCtmdGtvenczY2pIRjAxek1aUGZCQUFBIn0= -->
+<!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
+<p><img src="data:image/png;base64,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" /></p>
+<!-- rnb-plot-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBcbmBgYCJ9 -->
+<pre class="r"><code>``</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IGF0dGVtcHQgdG8gdXNlIHplcm8tbGVuZ3RoIHZhcmlhYmxlIG5hbWVcbiJ9 -->
+<pre><code>Error: attempt to use zero-length variable name</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChpcmlzKVxuYGBgIn0= -->
+<pre class="r"><code>head(iris)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJvVlN6VTdDUUJCZVdscG9MV0FBSDRNbVF2UktFejE2SUhLUTYxb1cyTGh1bTNaQmo3Nkd2aEdKUG9EdllZeUpDYnEvVGFra1R0TE16TGZmTjdNejIrdkwyY2lmK1FBQUc5U0JCV3lIaDhDOW1Kd096NFlBMUMyZTFmaUpKL3dqWi9WNElEaHRRWXY2QzJsUjcxbllTOVI5RmZZV2RUWGVCOUtpRTNWZTZBS05ON1gzdEw2cDlZSDJuWkUwb3h0L3FycUYvMUM4OFplcVUrRGZGZDFXMWYvWHY1dDcyaTJoazhNZi9QWVc0eEswUVNUbjBiRmVwRVJ6eEpJYzZzemZvQ3pIY1VLU1RDUGVCbWRMVEhFTUsrV2NtTURjVkN0NkxHRE11QmFBWFpWTzRUMHlkRWVEd1JTbGtJUlhpQzdaU21OSENydkI4d0lLSm9qOW9TbXNUR3RNVXhSajBXU3ZzNWNsRDZIcExoWm1QYWwzY0JYUi9xa000YzhoZytFaTQ1SURnelNTbE9HRThtS1crY3ZLNGxwV0FUcHJLcHJQQi9GcVRlOEc1NkpCNlpWYTJydWwyRkV0NitaaVpsMHVYd0NteUd5VXdGdEVkTkxtUThvWnd6VERsSmxKT0pxSExPR2JNZ2gvVzRQSTJjRHVGMEJCakxwZEF3QUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["x1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["x2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["x3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["x4"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["y1"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["y2"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["y3"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["y4"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"10","2":"10","3":"10","4":"8","5":"8.04","6":"9.14","7":"7.46","8":"6.58"},{"1":"8","2":"8","3":"8","4":"8","5":"6.95","6":"8.14","7":"6.77","8":"5.76"},{"1":"13","2":"13","3":"13","4":"8","5":"7.58","6":"8.74","7":"12.74","8":"7.71"},{"1":"9","2":"9","3":"9","4":"8","5":"8.81","6":"8.77","7":"7.11","8":"8.84"},{"1":"11","2":"11","3":"11","4":"8","5":"8.33","6":"9.26","7":"7.81","8":"8.47"},{"1":"14","2":"14","3":"14","4":"8","5":"9.96","6":"8.10","7":"8.84","8":"7.04"},{"1":"6","2":"6","3":"6","4":"8","5":"7.24","6":"6.13","7":"6.08","8":"5.25"},{"1":"4","2":"4","3":"4","4":"19","5":"4.26","6":"3.10","7":"5.39","8":"12.50"},{"1":"12","2":"12","3":"12","4":"8","5":"10.84","6":"9.13","7":"8.15","8":"5.56"},{"1":"7","2":"7","3":"7","4":"8","5":"4.82","6":"7.26","7":"6.42","8":"7.91"},{"1":"5","2":"5","3":"5","4":"8","5":"5.68","6":"4.74","7":"5.73","8":"6.89"}],"options":{"columns":{"min":{},"max":[10],"total":[8]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fctr"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa","_rn_":"1"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa","_rn_":"2"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa","_rn_":"3"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa","_rn_":"4"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa","_rn_":"5"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -1777,41 +1885,268 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5zYyA8LSBcbiAgYmluZF9jb2xzKFxuICAgIGFuc2NvbWJlICU+JSBcbiAgICAgIHNlbGVjdChtYXRjaGVzKFwieFwiKSkgJT4lIFxuICAgICAgZ2F0aGVyKGRhdGFzZXQsIFwieFwiKSxcbiAgICBhbnNjb21iZSAlPiUgXG4gICAgICBzZWxlY3QobWF0Y2hlcyhcInlcIikpICU+JSBcbiAgICAgIGdhdGhlcihrZXksIFwieVwiKVxuICApICU+JSBcbiAgc2VsZWN0KC1rZXkpICU+JSBcbiAgbXV0YXRlKGRhdGFzZXQgPSBnc3ViKFwieFwiLCBcIlwiLCBkYXRhc2V0KSkgJT4lXG4gIGFzX3RpYmJsZSgpXG5gYGAifQ== -->
-<pre class="r"><code>ansc &lt;- 
-  bind_cols(
-    anscombe %&gt;% 
-      select(matches(&quot;x&quot;)) %&gt;% 
-      gather(dataset, &quot;x&quot;),
-    anscombe %&gt;% 
-      select(matches(&quot;y&quot;)) %&gt;% 
-      gather(key, &quot;y&quot;)
-  ) %&gt;% 
-  select(-key) %&gt;% 
-  mutate(dataset = gsub(&quot;x&quot;, &quot;&quot;, dataset)) %&gt;%
-  as_tibble()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FibGUoaGVhZChpcmlzKSwgXG4gICAgICBhbGlnbj0gYyhcImxcIiwgXCJjXCIsIFwiclwiLCBcImNcIiwgXCJsXCIpLFxuICAgICAgY29sLm5hbWVzID0gYyhcIlNlcGFsIExlbmd0aFwiLCBcIlNlcGFsIFdpZHRoXCIsIFwiU2VwYWwgTGVuZ3RoXCIsIFwiU2VwYWwgV2lkdGhcIiwgXCJTcGVjaWVzXCIpKVxuYGBgIn0= -->
+<pre class="r"><code>kable(head(iris), 
+      align= c(&quot;l&quot;, &quot;c&quot;, &quot;r&quot;, &quot;c&quot;, &quot;l&quot;),
+      col.names = c(&quot;Sepal Length&quot;, &quot;Sepal Width&quot;, &quot;Sepal Length&quot;, &quot;Sepal Width&quot;, &quot;Species&quot;))</code></pre>
 <!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sepal Length</th>
+<th align="center">Sepal Width</th>
+<th align="right">Sepal Length</th>
+<th align="center">Sepal Width</th>
+<th align="left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5.1</td>
+<td align="center">3.5</td>
+<td align="right">1.4</td>
+<td align="center">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="left">4.9</td>
+<td align="center">3.0</td>
+<td align="right">1.4</td>
+<td align="center">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="left">4.7</td>
+<td align="center">3.2</td>
+<td align="right">1.3</td>
+<td align="center">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="left">4.6</td>
+<td align="center">3.1</td>
+<td align="right">1.5</td>
+<td align="center">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="left">5.0</td>
+<td align="center">3.6</td>
+<td align="right">1.4</td>
+<td align="center">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="left">5.4</td>
+<td align="center">3.9</td>
+<td align="right">1.7</td>
+<td align="center">0.4</td>
+<td align="left">setosa</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FibGUoaGVhZChhaXJxdWFsaXR5KSwgXG5gYGAifQ== -->
+<pre class="r"><code>kable(head(airquality), </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gcmVhZENoYXIoZmlsZSwgc2l6ZSwgVFJVRSkgOiB0cnVuY2F0aW5nIHN0cmluZyB3aXRoIGVtYmVkZGVkIG51bHNcbiJ9 -->
+<pre><code>Warning message:
+In readChar(file, size, TRUE) : truncating string with embedded nuls</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAgICAgYWxpZ249IGMoXCJyXCIsIFwiclwiLCBcImNcIiwgXCJjXCIsIFwibFwiLCBcImxcIiksXG4gICAgICBjb2wubmFtZXMgPSBjKFwiT3pvbmUgKHBwYilcIiwgXCJTb2xhciBSIChsYW5nKVwiLCBcIiBXaW5kIChtcGgpXCIsIFwiVGVtcCAowrBGKVwiLCBcIk1vbnRoXCIsIFwiRGF5XCIpKVxuYGBgIn0= -->
+<pre class="r"><code>      align= c(&quot;r&quot;, &quot;r&quot;, &quot;c&quot;, &quot;c&quot;, &quot;l&quot;, &quot;l&quot;),
+      col.names = c(&quot;Ozone (ppb)&quot;, &quot;Solar R (lang)&quot;, &quot; Wind (mph)&quot;, &quot;Temp (°F)&quot;, &quot;Month&quot;, &quot;Day&quot;))</code></pre>
+<!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="right">Ozone (ppb)</th>
+<th align="right">Solar R (lang)</th>
+<th align="center">Wind (mph)</th>
+<th align="center">Temp (°F)</th>
+<th align="left">Month</th>
+<th align="left">Day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">41</td>
+<td align="right">190</td>
+<td align="center">7.4</td>
+<td align="center">67</td>
+<td align="left">5</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="right">118</td>
+<td align="center">8.0</td>
+<td align="center">72</td>
+<td align="left">5</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">149</td>
+<td align="center">12.6</td>
+<td align="center">74</td>
+<td align="left">5</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">313</td>
+<td align="center">11.5</td>
+<td align="center">62</td>
+<td align="left">5</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="center">14.3</td>
+<td align="center">56</td>
+<td align="left">5</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="right">NA</td>
+<td align="center">14.9</td>
+<td align="center">66</td>
+<td align="left">5</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW5zYyA8LVxuICBiaW5kX2NvbHMoXG4gICAgYW5zY29tYmUgJT4lIFxuICAgICAgc2VsZWN0KG1hdGNoZXMoXCJ4XCIpKSAlPiUgXG4gICAgICBnYXRoZXIoZGF0YXNldCwgXCJ4XCIpLFxuICAgIGFuc2NvbWJlICU+JSBcbiAgICAgIHNlbGVjdChtYXRjaGVzKFwieVwiKSkgJT4lIFxuICAgICAgZ2F0aGVyKGtleSwgXCJ5XCIpXG4gICkgJT4lXG4gIHNlbGVjdCgta2V5KSAlPiUgXG4gIG11dGF0ZShkYXRhc2V0ID0gZ3N1YihcInhcIiwgXCJcIiwgZGF0YXNldCkpICU+JSAgXG4gIGFzX3RpYmJsZSgpXG5gYGAifQ== -->
-<pre class="r"><code>ansc &lt;-
-  bind_cols(
-    anscombe %&gt;% 
-      select(matches(&quot;x&quot;)) %&gt;% 
-      gather(dataset, &quot;x&quot;),
-    anscombe %&gt;% 
-      select(matches(&quot;y&quot;)) %&gt;% 
-      gather(key, &quot;y&quot;)
-  ) %&gt;%
-  select(-key) %&gt;% 
-  mutate(dataset = gsub(&quot;x&quot;, &quot;&quot;, dataset)) %&gt;%  
-  as_tibble()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FibGUoY2hpY2tzX2xtKVxuYGBgIn0= -->
+<pre class="r"><code>kable(chicks_lm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYXMuZGF0YS5mcmFtZS5kZWZhdWx0KHgpIDogXG4gIGNhbm5vdCBjb2VyY2UgY2xhc3Mg4oCYXCJsbVwi4oCZIHRvIGEgZGF0YS5mcmFtZVxuIn0= -->
+<pre><code>Error in as.data.frame.default(x) : 
+  cannot coerce class ‘&quot;lm&quot;’ to a data.frame</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIGNoaWNrc19sbSA8LSBsbSh3ZWlnaHQgfiBmZWVkLCBkYXRhID0gY2hpY2t3dHMpXG5gYGAifQ== -->
+<pre class="r"><code> chicks_lm &lt;- lm(weight ~ feed, data = chickwts)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShjaGlja3NfbG0pXG5gYGAifQ== -->
+<pre class="r"><code>summary(chicks_lm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IHdlaWdodCB+IGZlZWQsIGRhdGEgPSBjaGlja3d0cylcblxuUmVzaWR1YWxzOlxuICAgICBNaW4gICAgICAgMVEgICBNZWRpYW4gICAgICAgM1EgICAgICBNYXggXG4tMTIzLjkwOSAgLTM0LjQxMyAgICAxLjU3MSAgIDM4LjE3MCAgMTAzLjA5MSBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICAgXG4oSW50ZXJjZXB0KSAgICAzMjMuNTgzICAgICAxNS44MzQgIDIwLjQzNiAgPCAyZS0xNiAqKipcbmZlZWRob3JzZWJlYW4gLTE2My4zODMgICAgIDIzLjQ4NSAgLTYuOTU3IDIuMDdlLTA5ICoqKlxuZmVlZGxpbnNlZWQgICAtMTA0LjgzMyAgICAgMjIuMzkzICAtNC42ODIgMS40OWUtMDUgKioqXG5mZWVkbWVhdG1lYWwgICAtNDYuNjc0ICAgICAyMi44OTYgIC0yLjAzOSAwLjA0NTU2NyAqICBcbmZlZWRzb3liZWFuICAgIC03Ny4xNTUgICAgIDIxLjU3OCAgLTMuNTc2IDAuMDAwNjY1ICoqKlxuZmVlZHN1bmZsb3dlciAgICA1LjMzMyAgICAgMjIuMzkzICAgMC4yMzggMC44MTI0OTUgICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuUmVzaWR1YWwgc3RhbmRhcmQgZXJyb3I6IDU0Ljg1IG9uIDY1IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC41NDE3LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC41MDY0IFxuRi1zdGF0aXN0aWM6IDE1LjM2IG9uIDUgYW5kIDY1IERGLCAgcC12YWx1ZTogNS45MzZlLTEwXG4ifQ== -->
+<pre><code>
+Call:
+lm(formula = weight ~ feed, data = chickwts)
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFtYW5kYSdzIFIgTm90ZWJvb2sgVHJhaW53cmVjayINCmF1dGhvcjogIkFtYW5kYSBSdXNzb20iDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiAlWScpYCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZWRpdG9yX29wdGlvbnM6DQogIGNodW5rX291dHB1dF90eXBlOiBpbmxpbmUNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCmBgYHtyfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KYGBge3J9DQphbnNjb21iZQ0KYGBgDQoNCmBgYHtyfQ0KYW5zYyA8LSANCiAgYmluZF9jb2xzKA0KICAgIGFuc2NvbWJlICU+JSANCiAgICAgIHNlbGVjdChtYXRjaGVzKCJ4IikpICU+JSANCiAgICAgIGdhdGhlcihkYXRhc2V0LCAieCIpLA0KICAgIGFuc2NvbWJlICU+JSANCiAgICAgIHNlbGVjdChtYXRjaGVzKCJ5IikpICU+JSANCiAgICAgIGdhdGhlcihrZXksICJ5IikNCiAgKSAlPiUgDQogIHNlbGVjdCgta2V5KSAlPiUgDQogIG11dGF0ZShkYXRhc2V0ID0gZ3N1YigieCIsICIiLCBkYXRhc2V0KSkgJT4lDQogIGFzX3RpYmJsZSgpDQpgYGANCmBgYHtyfQ0KYW5zYyA8LQ0KICBiaW5kX2NvbHMoDQogICAgYW5zY29tYmUgJT4lIA0KICAgICAgc2VsZWN0KG1hdGNoZXMoIngiKSkgJT4lIA0KICAgICAgZ2F0aGVyKGRhdGFzZXQsICJ4IiksDQogICAgYW5zY29tYmUgJT4lIA0KICAgICAgc2VsZWN0KG1hdGNoZXMoInkiKSkgJT4lIA0KICAgICAgZ2F0aGVyKGtleSwgInkiKQ0KICApICU+JQ0KICBzZWxlY3QoLWtleSkgJT4lIA0KICBtdXRhdGUoZGF0YXNldCA9IGdzdWIoIngiLCAiIiwgZGF0YXNldCkpICU+JSAgDQogIGFzX3RpYmJsZSgpDQpgYGANCg0KDQo=</div>
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-123.909  -34.413    1.571   38.170  103.091 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    323.583     15.834  20.436  &lt; 2e-16 ***
+feedhorsebean -163.383     23.485  -6.957 2.07e-09 ***
+feedlinseed   -104.833     22.393  -4.682 1.49e-05 ***
+feedmeatmeal   -46.674     22.896  -2.039 0.045567 *  
+feedsoybean    -77.155     21.578  -3.576 0.000665 ***
+feedsunflower    5.333     22.393   0.238 0.812495    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.85 on 65 degrees of freedom
+Multiple R-squared:  0.5417,    Adjusted R-squared:  0.5064 
+F-statistic: 15.36 on 5 and 65 DF,  p-value: 5.936e-10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FibGUoY2hpY2tzX2xtKVxuYGBgIn0= -->
+<pre class="r"><code>kable(chicks_lm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYXMuZGF0YS5mcmFtZS5kZWZhdWx0KHgpIDogXG4gIGNhbm5vdCBjb2VyY2UgY2xhc3Mg4oCYXCJsbVwi4oCZIHRvIGEgZGF0YS5mcmFtZVxuIn0= -->
+<pre><code>Error in as.data.frame.default(x) : 
+  cannot coerce class ‘&quot;lm&quot;’ to a data.frame</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I attempted to run kable(chicks_lm) in both the console and as script and received an error message both times.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJlZXNfbG0gPC0gbG0oR2lydGggfiBIZWlnaHQsIGRhdGEgPSB0cmVlcylcbmBgYCJ9 -->
+<pre class="r"><code>trees_lm &lt;- lm(Girth ~ Height, data = trees)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueHRhYmxlKHRyZWVzX2xtKSAlPiUga2FibGUoKVxuYGBgIn0= -->
+<pre class="r"><code>xtable(trees_lm) %&gt;% kable()</code></pre>
+<!-- rnb-source-end -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Estimate</th>
+<th align="right">Std. Error</th>
+<th align="right">t value</th>
+<th align="right">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">-6.1883945</td>
+<td align="right">5.9601994</td>
+<td align="right">-1.038286</td>
+<td align="right">0.3077168</td>
+</tr>
+<tr class="even">
+<td align="left">Height</td>
+<td align="right">0.2557471</td>
+<td align="right">0.0781583</td>
+<td align="right">3.272169</td>
+<td align="right">0.0027578</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>footnote: Not a fan, sorry….. :/</p>
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFtYW5kYSdzIFIgTm90ZWJvb2sgVHJhaW53cmVjayINCmF1dGhvcjogIkFtYW5kYSBSdXNzb20iDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiAlWScpYCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZWRpdG9yX29wdGlvbnM6DQogIGNodW5rX291dHB1dF90eXBlOiBpbmxpbmUNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCmBgYHtyfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KGtuaXRyKQ0KbGlicmFyeSh4dGFibGUpDQpgYGANCg0KYGBge3J9DQphbnNjb21iZQ0KYGBgDQoNCmBgYHtyfQ0KYW5zYyA8LSANCiAgYmluZF9jb2xzKA0KICAgIGFuc2NvbWJlICU+JSANCiAgICAgIHNlbGVjdChtYXRjaGVzKCJ4IikpICU+JSANCiAgICAgIGdhdGhlcihkYXRhc2V0LCAieCIpLA0KICAgIGFuc2NvbWJlICU+JSANCiAgICAgIHNlbGVjdChtYXRjaGVzKCJ5IikpICU+JSANCiAgICAgIGdhdGhlcihrZXksICJ5IikNCiAgKSAlPiUgDQogIHNlbGVjdCgta2V5KSAlPiUgDQogIG11dGF0ZShkYXRhc2V0ID0gZ3N1YigieCIsICIiLCBkYXRhc2V0KSkgJT4lDQogIGFzX3RpYmJsZSgpDQpgYGANCmBgYHtyfQ0KYW5zYyA8LQ0KICBiaW5kX2NvbHMoDQogICAgYW5zY29tYmUgJT4lIA0KICAgICAgc2VsZWN0KG1hdGNoZXMoIngiKSkgJT4lIA0KICAgICAgZ2F0aGVyKGRhdGFzZXQsICJ4IiksDQogICAgYW5zY29tYmUgJT4lIA0KICAgICAgc2VsZWN0KG1hdGNoZXMoInkiKSkgJT4lIA0KICAgICAgZ2F0aGVyKGtleSwgInkiKQ0KICApICU+JQ0KICBzZWxlY3QoLWtleSkgJT4lIA0KICBtdXRhdGUoZGF0YXNldCA9IGdzdWIoIngiLCAiIiwgZGF0YXNldCkpICU+JSAgDQogIGFzX3RpYmJsZSgpDQpgYGANCg0KYGBge3J9DQphbnNjICU+JSBnZ3Bsb3QoYWVzKHgsIHksIGNvbG9yID0gZGF0YXNldCkpICsNCiAgZ2VvbV9wb2ludCgpICsNCiAgZmFjZXRfd3JhcCh+ZGF0YXNldCwgbmNvbCA9IDIpDQpgYA0KYGBgDQoNCg0KYGBge3J9DQpoZWFkKGlyaXMpDQpgYGANCg0KDQpgYGB7cn0NCmthYmxlKGhlYWQoaXJpcyksIA0KICAgICAgYWxpZ249IGMoImwiLCAiYyIsICJyIiwgImMiLCAibCIpLA0KICAgICAgY29sLm5hbWVzID0gYygiU2VwYWwgTGVuZ3RoIiwgIlNlcGFsIFdpZHRoIiwgIlNlcGFsIExlbmd0aCIsICJTZXBhbCBXaWR0aCIsICJTcGVjaWVzIikpDQpgYGANCg0KYGBge3J9DQprYWJsZShoZWFkKGFpcnF1YWxpdHkpLCANCiAgICAgIGFsaWduPSBjKCJyIiwgInIiLCAiYyIsICJjIiwgImwiLCAibCIpLA0KICAgICAgY29sLm5hbWVzID0gYygiT3pvbmUgKHBwYikiLCAiU29sYXIgUiAobGFuZykiLCAiIFdpbmQgKG1waCkiLCAiVGVtcCAowrBGKSIsICJNb250aCIsICJEYXkiKSkNCmBgYA0KYGBge3J9DQprYWJsZShjaGlja3NfbG0pDQpgYGANCg0KYGBge3J9DQogY2hpY2tzX2xtIDwtIGxtKHdlaWdodCB+IGZlZWQsIGRhdGEgPSBjaGlja3d0cykNCmBgYA0KDQpgYGB7cn0NCnN1bW1hcnkoY2hpY2tzX2xtKQ0KYGBgDQpgYGB7cn0NCmthYmxlKGNoaWNrc19sbSkNCmBgYA0KIA0KSSBhdHRlbXB0ZWQgdG8gcnVuIGthYmxlKGNoaWNrc19sbSkgaW4gYm90aCB0aGUgY29uc29sZSBhbmQgYXMgc2NyaXB0IGFuZCByZWNlaXZlZCBhbiBlcnJvciBtZXNzYWdlIGJvdGggdGltZXMuDQoNCmBgYHtyfQ0KdHJlZXNfbG0gPC0gbG0oR2lydGggfiBIZWlnaHQsIGRhdGEgPSB0cmVlcykNCmBgYA0KDQpgYGB7cn0NCnh0YWJsZSh0cmVlc19sbSkgJT4lIGthYmxlKCkNCmBgYA0KZm9vdG5vdGU6IE5vdCBhIGZhbiwgc29ycnkuLi4uLiA6Lw0KDQogDQog</div>
 
 
 
