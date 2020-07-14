@@ -599,7 +599,7 @@ select(flights, contains('delay'), contains('time'))
 
 **2:** What happens if you include the name of a variable multiple times in a `select()` call?
 
-The variables you repeat will be ommitted
+The variables you repeat will be omitted
 
 
 **3:** What does the `one_of()` function do? Why might it be helpful in conjunction with this vector?
