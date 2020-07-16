@@ -601,7 +601,6 @@ select(flights, contains('delay'), contains('time'))
 
 The variables you repeat will be omitted
 
-
 **3:** What does the `one_of()` function do? Why might it be helpful in conjunction with this vector?
 
 `vars <- c("year", "month", "day", "dep_delay", "arr_delay")`
