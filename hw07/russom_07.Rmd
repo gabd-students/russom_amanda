@@ -59,10 +59,20 @@ tern_data <- read_tsv(file.path(file_path, "roseate_terns.txt"))
 Remove sites with missing data
 
 ```{r}
-tern_data %>% filter(complete.cases(.))
+complete_terns <- tern_data %>% filter(complete.cases(.))
 ```
- Make a line plot 
- 
+
+Tidy data
+
+```{r}
+tern_2 <- complete_terns %>% 
+  pivot_longer(AR:JC, names_to = "Sites", values_to = "Populations")  
+```
+
+```{r}
+tern_2
+```
+
 
 
 
