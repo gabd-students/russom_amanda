@@ -1,0 +1,75 @@
+---
+title: HW07: Data Importing and Wrangling 1
+author: Amanda Russom
+output: html_notebook
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+file_path <- "../data" 
+```
+
+Load limpets data 
+
+```{r}
+limpets_data <- read_csv(file.path(file_path, "limpets.csv"))
+```
+The limpets data is tidy
+
+Use the column types argument
+
+
+```{r}
+col_types = "ncc"
+```
+Make the sites column an ordered factor
+
+```{r}
+limpets_data$site <- factor(limpets_data$Site, levels=c("PBL", "KNRM", "VBG","WP","PF", "DP", "SIO", "CTZ1", "CTZ2", "CNM"))
+```
+
+Checking order
+
+```{r}
+limpets_data
+```
+
+
+Make a boxplot 
+```{r}
+ggplot(data = limpets_data, mapping = aes(x = Site, y = Length)) + 
+  geom_boxplot(aes(color=Protected)) + labs(x="Site", y="Length (mm)")
+```
+DP and VBG sites have outliers.  The protected sites are home to larger limpets.
+
+
+Roseate Terns
+
+The data is NOT tidy.
+
+```{r}
+tern_data <- read_tsv(file.path(file_path, "roseate_terns.txt"))
+```
+
+Remove sites with missing data
+
+```{r}
+tern_data %>% filter(complete.cases(.))
+```
+ Make a line plot 
+ 
+
+
+
+
+
+
+ 
+
+
+
