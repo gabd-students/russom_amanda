@@ -1,0 +1,197 @@
+---
+title: HW07: Data Importing and Wrangling 1
+author: Amanda Russom
+output: html_notebook
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+file_path <- "../data" 
+```
+
+### Load limpets data 
+
+```{r}
+limpets_data <- read_csv(file.path(file_path, "limpets.csv"))
+```
+The limpets data is tidy
+
+#### Use the column types argument
+
+
+```{r}
+col_types = "ncc"
+```
+### Make the sites column an ordered factor
+
+```{r}
+limpets_data$site <- factor(limpets_data$Site, levels=c("PBL", "KNRM", "VBG","WP","PF", "DP", "SIO", "CTZ1", "CTZ2", "CNM"))
+```
+
+### Checking order
+
+```{r}
+limpets_data
+```
+
+
+### Make a boxplot 
+```{r}
+ggplot(data = limpets_data, mapping = aes(x = Site, y = Length)) + 
+  geom_boxplot(aes(color=Protected)) + labs(x="Site", y="Length (mm)")
+```
+DP and VBG sites have outliers.  The protected sites are home to larger limpets.
+
+
+### Roseate Terns
+
+The data is NOT tidy.
+
+### Import tern data 
+
+```{r}
+tern_data <- read_tsv(file.path(file_path, "roseate_terns.txt"))
+```
+
+### Remove sites with missing data
+
+```{r}
+complete_terns <- tern_data %>% filter(complete.cases(.))
+```
+
+### Tidy data
+
+```{r}
+tern_2 <- complete_terns %>% 
+  pivot_longer(AR:JC, names_to = "Sites", values_to = "Populations")  
+```
+
+```{r}
+tern_2
+```
+
+
+### Tern data graph 
+
+```{r}
+tern_2 %>%
+  ggplot() +
+  geom_line(aes(x = year, y = Populations, group= Sites, color= Sites))
+```
+
+Several sites increased in population, including, AR, AL, AC, BL, BC, JL, and JC.  The populations that decreased were BR and JR.
+
+The breaks in the lines are due to missing data which was removed prior to writing the graph code. 
+
+
+### Import abalone data, remove the first column ans make a boxplot
+
+```{r}
+abalone_data <- read_csv(file.path(file_path, "abalone.csv"))
+select(abalone_data, -(X1))
+ggplot(data  = abalone_data) + 
+  geom_boxplot(mapping = aes(x = Type, y = Height))
+```
+
+### Make a scatterplot to analyze outliers
+
+```{r}
+ggplot(data = abalone_data) + 
+  geom_point(mapping = aes(x = Rings, y = Height))
+```
+The large abalone are not old, according to the ring count data.  Both are </= 10. 
+
+### Filter the data to remove outliers.  Create and ordered factor.  Graph new scatterplot
+
+```{r}
+abalone_data_2 <- filter(abalone_data, Height <= 0.35)
+factor(abalone_data_2$Type, levels = c("I", "F", "M"))
+ggplot(data = abalone_data_2) + 
+  geom_point(mapping = aes(x = Rings, y = Height, color = Type))
+```
+
+The new scatter plot shows that mature individuals generally have greater height than immature individuals. However, not all mature male and female individuals are larger than immatures. 
+
+### Create a plot with zero height individuals removed
+
+```{r}
+abalone_data_2[abalone_data_2$Height == 0, 'Height'] <- NA
+ggplot(data = abalone_data_2) + 
+  geom_point(mapping = aes(x = Height, y = Rings, color = Type))
+```
+
+ 
+
+### Scatterplot of choice #1
+
+```{r}
+ggplot(data = abalone_data_2) + 
+  geom_point(mapping = aes(x = Rings, y = Diameter, color = Type))
+```
+### Scatterplot of choice #2
+
+```{r}
+ggplot(data = abalone_data_2) + 
+  geom_point(mapping = aes(x = Rings, y = LongestShell, color = Type))
+```
+### Import darters data
+
+```{r}
+darter_data <- read_fwf(file.path(file_path, "darter.txt"), fwf_widths(c(3, 11, 1, 1, 1, 3, 4, 4, 4, 3, 3, 2, 2)), comment = "#")
+```
+
+### Name columns, make ordered factors  
+
+```{r}
+colnames(darter_data) <- c("Specimen", "Species", "Riffle", "Age", "Sex", "Length", "Depth", "Velocity", "Temp", "MajSub Proportion", "MinSub Proportion", "Major Type", "Minor Type")
+darter_data$Riffle <- factor(darter_data$Riffle,levels=c("1", "2"))
+darter_data$"Major Type" <- factor(darter_data$"Major Type",levels=c("s","fg", "sg", "lg", "c"), order = TRUE)
+```
+### Filter rows, Remove and rename columns, arrange data
+
+```{r}
+darter_data_2 <- darter_data %>% filter(Species != "zonale" & Species != "tetrazonum") %>% 
+  select(!"MinSub Proportion" & ! "Minor Type") %>% 
+  rename("Major_substrate" = "MajSub Proportion", "Major_type" = "Major Type") %>% 
+  arrange("Specimen")
+```
+### Darter Plot 1
+
+```{r}
+ggplot(data = darter_data_2,mapping = aes(x = Length, y = Depth, color = Species, shape = Species)) +
+  geom_point() +
+  facet_wrap(~Riffle, ncol = 2) 
+```
+In riffle 1 the darters lie deeper than in riffle 2.
+
+
+### Darter Plot 2
+
+```{r}
+ggplot(data = darter_data_2,mapping = aes(x = Length, y = Species, color = Species)) +
+  geom_boxplot() +
+  facet_wrap(~Riffle, ncol = 2)
+```
+Riffle 2 shows the most outliers.
+
+### Darter Plot #3
+
+```{r}
+ggplot(data = darter_data_2, mapping = aes(x = Length, y = Major_type, color = Species))+
+  geom_boxplot() +
+  facet_grid(Species ~ Riffle)
+```
+### Switch order of argument
+
+```{r}
+ggplot(data = darter_data_2, mapping = aes(x = Length, y = Major_type, color = Species))+
+  geom_boxplot() +
+  facet_grid(Riffle ~ Species)
+```
+
+The argument order of the first graph (species~riffle) allows the data to be less compressed and interpreted more easily
