@@ -169,7 +169,7 @@ ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
 
 ### 5.6.2: Missing values
 
-## Not setting an argument will result in this... 
+## Not setting an argument will result in this.... 
 
 ```{r}
 flights %>% 
