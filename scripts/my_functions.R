@@ -12,7 +12,7 @@ scaled_mass <- function(mass = 0, tarsus = 0, slope = 0) {mass*((mean(tarus))/ta
 
 mass <- c(26.7, 22.8, 25.7, 26.1, 23.9)
 
-### tarus vector
+### tarus vectors
 
 tarus <- c(18.4, 17.5, 18.4, 18.0, 18.2)
 

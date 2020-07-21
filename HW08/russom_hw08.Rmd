@@ -130,7 +130,7 @@ Read and run all of the examples. Pay careful attention to the useful summary fu
 summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
 ```
 
-## Change the unit of analysis from teh complete dataset to individual groups
+## Change the unit of analysis from the complete dataset to individual groups
 
 ```{r}
 by_day <- group_by(flights, year, month, day) 
