@@ -1,0 +1,23 @@
+---
+title: "HW 09 Wrangling II"
+author: "Amanda Russom"
+output: html_notebook
+editor_options:
+  chunk_output_type:inline
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(here)
+```
+
+```{r}
+library(knitr)
+```
+```{r}
+library(smatr)
+```
+
