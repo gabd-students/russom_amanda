@@ -181,13 +181,49 @@ slope <- coef(major_axis)
 b <- slope['slope']
 ```
 
+### use mutate to add new SMI column
+```{r}
+feathers_data_2_w_SMI <- mutate(feathers_data_2,new_smi = scaled_mass(mass,tarsus,b)) 
+```
+
+#### compare new columns
+
+```{r}
+select(feathers_data_2_w_SMI, "smi", "new_smi")
+```
+
+### Group by site
+```{r}
+site_sorted_feathers_data <- group_by(feathers_data_2_w_SMI,site)
+```
+
+### calculate the mean and standard error of the mean
+```{r}
+summarized_feathers_data <- summarise(site_sorted_feathers_data, basal_mean=mean(basal_cort, na.rm = TRUE),stress_mean = mean(stress_cort, na.rm=TRUE), std_err_basal=std_err(basal_cort, na.rm=TRUE),std_err_cort=std_err(stress_cort, na.rm=TRUE))
+
+```
+### print results
+
+```{r}
+summarized_feathers_data
+```
+### Plot 1 of feathers data
+```{r}
+ggplot(data=site_sorted_feathers_data)+
+  geom_boxplot(mapping=aes(x=site,y=new_smi))
+```
 
 
+### The individuals of the niort site have much wider range of smi vaules as compared to the other sites
 
+### Plot 2 feathers data
+```{r}
+ggplot(data=summarized_feathers_data)+
+  geom_point(mapping=aes(x=site,y=basal_mean))+
+  geom_errorbar(aes(x=site, ymin=std_err_basal-1,ymax=std_err_basal+1))
+```
 
-
-
-
+### the assignment wanted us to plot the basal cortico concetration for each site, I hope this only meant the mean vaule and not all the collected vaules, because that's what we did :/
 
 
 
