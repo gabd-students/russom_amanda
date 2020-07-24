@@ -1805,10 +1805,221 @@ library(patchwork)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="exploring-width-outliers" class="section level3">
+<h3>exploring width outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IFdpZHRoKSkgK1xuICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = Width)) +
+  geom_boxplot(width = 0.25)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="possible-outlier-found-in-width-data" class="section level3">
+<h3>1 possible outlier found in width data</h3>
+</div>
+<div id="exploring-depth-outliers" class="section level3">
+<h3>exploring depth outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IERlcHRoKSkgK1xuICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = Depth)) +
+  geom_boxplot(width = 0.25)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="possible-outliers-found" class="section level3">
+<h3>2 possible outliers found</h3>
+</div>
+<div id="exploring-flow-outliers" class="section level3">
+<h3>exploring flow outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IEZsb3cpKSArXG4gIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMjUpXG5gYGAifQ== -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = Flow)) +
+  geom_boxplot(width = 0.25)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="mutiple-possible-outliers" class="section level3">
+<h3>mutiple possible outliers</h3>
+</div>
+<div id="exploring-ph-outliers" class="section level3">
+<h3>exploring pH outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IHBIKSkgK1xuICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = pH)) +
+  geom_boxplot(width = 0.25)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="possible-outliers" class="section level3">
+<h3>2 possible outliers</h3>
+</div>
+<div id="exploring-tds-outliers" class="section level3">
+<h3>exploring TDS outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IFREUykpICtcbiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkgK1xuICBsYWJzKHggPSBOVUxMLFxuICAgICAgIHkgPSBcIlRvdGFsIERpc3NvbHZlZCBTb2xpZHNcIilcbmBgYCJ9 -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = TDS)) +
+  geom_boxplot(width = 0.25) +
+  labs(x = NULL,
+       y = &quot;Total Dissolved Solids&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="no-outliers-observed" class="section level3">
+<h3>No outliers observed</h3>
+</div>
+<div id="exploring-conductivity-outliers" class="section level3">
+<h3>exploring conductivity outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IENvbmQpKSArXG4gIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMjUpICtcbiAgbGFicyh4ID0gTlVMTCxcbiAgICAgICB5ID0gXCJDb25kdWN0aXZpdHlcIilcbmBgYCJ9 -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = Cond)) +
+  geom_boxplot(width = 0.25) +
+  labs(x = NULL,
+       y = &quot;Conductivity&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="no-outliers" class="section level3">
+<h3>no outliers</h3>
+</div>
+<div id="exploring-nitrogen-outliers" class="section level3">
+<h3>exploring nitrogen outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IE4pKSArXG4gIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMjUpICtcbiAgbGFicyh4ID0gTlVMTCxcbiAgICAgICB5ID0gXCJOaXRyb2dlblwiKVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = N)) +
+  geom_boxplot(width = 0.25) +
+  labs(x = NULL,
+       y = &quot;Nitrogen&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="possible-outliers-1" class="section level3">
+<h3>2 possible outliers</h3>
+</div>
+<div id="exploring-nitrate-outliers" class="section level3">
+<h3>exploring nitrate outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgXG4gICAgICAgICAgICAgeSA9IE5pKSkgK1xuICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KSArXG4gIGxhYnMoeCA9IE5VTEwsXG4gICAgICAgeSA9IFwiTml0cmF0ZVwiKVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;% 
+  ggplot(aes(x = box_group, 
+             y = Ni)) +
+  geom_boxplot(width = 0.25) +
+  labs(x = NULL,
+       y = &quot;Nitrate&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="no-outliers-1" class="section level2">
+<h2>No outliers</h2>
+<div id="explore-nt-outliers" class="section level3">
+<h3>Explore Nt outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLFxuICAgICAgICAgICAgIHkgPSBOdCkpICtcbiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrXG4gICBsYWJzKHggPSBOVUxMLFxuICAgICAgIHkgPSBcIk5pdHJpdGUgQ29uY2VudHJhdGlvbnNcIilcbmBgYCJ9 -->
+<pre class="r"><code>crabs_data %&gt;%
+  ggplot(aes(x = box_group,
+             y = Nt)) +
+  geom_boxplot(width = 0.25)+
+   labs(x = NULL,
+       y = &quot;Nitrite Concentrations&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="multiple-possible-outliers" class="section level2">
+<h2>Multiple possible outliers</h2>
+<div id="explore-phos-outliers" class="section level3">
+<h3>Explore Phos outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLFxuICAgICAgICAgICAgIHkgPSBQaG9zKSkgK1xuICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KStcbiAgIGxhYnMoeCA9IE5VTEwsXG4gICAgICAgeSA9IFwiUGhvc3BoYXRlXCIpXG5gYGAifQ== -->
+<pre class="r"><code>crabs_data %&gt;%
+  ggplot(aes(x = box_group,
+             y = Phos)) +
+  geom_boxplot(width = 0.25)+
+   labs(x = NULL,
+       y = &quot;Phosphate&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="two-outliers" class="section level2">
+<h2>Two outliers</h2>
+<div id="explore-mg-outliers" class="section level3">
+<h3>Explore Mg outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLFxuICAgICAgICAgICAgIHkgPSBNZykpICtcbiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrXG4gICBsYWJzKHggPSBOVUxMLFxuICAgICAgIHkgPSBcIk1hZ25lc2l1bVwiKVxuYGBgIn0= -->
+<pre class="r"><code>crabs_data %&gt;%
+  ggplot(aes(x = box_group,
+             y = Mg)) +
+  geom_boxplot(width = 0.25)+
+   labs(x = NULL,
+       y = &quot;Magnesium&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="no-outliers-2" class="section level2">
+<h2>No outliers</h2>
+<div id="explore-ca-outliers" class="section level3">
+<h3>Explore Ca outliers</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3JhYnNfZGF0YSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLFxuICAgICAgICAgICAgIHkgPSBDYSkpICtcbiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrXG4gICBsYWJzKHggPSBOVUxMLFxuICAgICAgIHkgPSBcIkNhbGNpdW0gY29uY2VudHJhdGlvbnNcIilcbmBgYCJ9 -->
+<pre class="r"><code>crabs_data %&gt;%
+  ggplot(aes(x = box_group,
+             y = Ca)) +
+  geom_boxplot(width = 0.25)+
+   labs(x = NULL,
+       y = &quot;Calcium concentrations&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="no-outliers-3" class="section level2">
+<h2>No outliers</h2>
+<div id="overall-data-interpretation-is-that-the-variables-which-most-likely-contain-outliers-are-width-depth-ph-phosphate-and-nitrogen.-the-variables-flow-and-nitrate-contained-mutiple-possible-outlier-points.-the-variables-tds-cond-ni-mg-and-ca-contained-no-possible-outliers.-the-data-must-be-further-explored-to-determine-if-possible-outliers-are-truly-outliers." class="section level4">
+<h4>Overall data interpretation is that the variables which most likely contain outliers are width, depth, pH, phosphate, and nitrogen. The variables flow and nitrate contained mutiple possible outlier points. The variables TDS, Cond, Ni, MG, and Ca contained no possible outliers. The data must be further explored to determine if possible outliers are truly outliers.</h4>
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhXMTE6IERhdGEgVmlzdWFsaXphdGlvbiINCmF1dGhvcjogIkFtYW5kYSBSdXNzb20iDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiAlWScpYCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZWRpdG9yX29wdGlvbnM6DQogIGNodW5rX291dHB1dF90eXBlOiBpbmxpbmUNCi0tLQ0KYGBge3J9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkoaGVyZSkNCmxpYnJhcnkoR0dhbGx5KQ0KbGlicmFyeShwYXRjaHdvcmspDQpgYGANCg0KIyMjIGltcG9ydCBkYXRhDQoNCmBgYHtyfQ0KY3JhYnNfcmF3IDwtIHJlYWRfY3N2KGhlcmUoIkRhdGEiLCJhZWdsYV9jcmFicy5jc3YiKSkNCmBgYA0KDQojIyMgdmlldyBpbXBvcnRlZCBkYXRhc2V0DQpgYGB7cn0NCnZpZXcoY3JhYnNfcmF3KQ0KYGBgDQoNCiMjIyByZW1vdmUgY29sdW1zLCByZW1vdmUgcm93LCBjcmVhdGUgZHVtbXkgdmFyaWFibGUNCg0KYGBge3J9DQpjcmFic19kYXRhIDwtIGNyYWJzX3JhdyAlPiUNCiAgc2VsZWN0KFdpZHRoLCBEZXB0aCwgRmxvdywgcEgsIFREUywgQ29uZCwgTiwgTmksIE50LCBQaG9zLCBNZywgQ2EpICU+JQ0KICBkcm9wX25hKCkgJT4lIA0KICBtdXRhdGUoYm94X2dyb3VwID0gIkNyYWJzIixyb3dfb3JkZXIgPSAxOm5yb3coLikpDQpgYGANCiMjIyB2aWV3IHJlc3VsdHMNCmBgYHtyfQ0KdmlldyhjcmFic19kYXRhKQ0KYGBgDQoNCg0KDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhXMTE6IERhdGEgVmlzdWFsaXphdGlvbiINCmF1dGhvcjogIkFtYW5kYSBSdXNzb20iDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiAlWScpYCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZWRpdG9yX29wdGlvbnM6DQogIGNodW5rX291dHB1dF90eXBlOiBpbmxpbmUNCi0tLQ0KYGBge3J9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkoaGVyZSkNCmxpYnJhcnkoR0dhbGx5KQ0KbGlicmFyeShwYXRjaHdvcmspDQpgYGANCg0KIyMjIGltcG9ydCBkYXRhDQoNCmBgYHtyfQ0KY3JhYnNfcmF3IDwtIHJlYWRfY3N2KGhlcmUoIkRhdGEiLCJhZWdsYV9jcmFicy5jc3YiKSkNCmBgYA0KDQojIyMgdmlldyBpbXBvcnRlZCBkYXRhc2V0DQpgYGB7cn0NCnZpZXcoY3JhYnNfcmF3KQ0KYGBgDQoNCiMjIyByZW1vdmUgY29sdW1zLCByZW1vdmUgcm93LCBjcmVhdGUgZHVtbXkgdmFyaWFibGUNCg0KYGBge3J9DQpjcmFic19kYXRhIDwtIGNyYWJzX3JhdyAlPiUNCiAgc2VsZWN0KFdpZHRoLCBEZXB0aCwgRmxvdywgcEgsIFREUywgQ29uZCwgTiwgTmksIE50LCBQaG9zLCBNZywgQ2EpICU+JQ0KICBkcm9wX25hKCkgJT4lIA0KICBtdXRhdGUoYm94X2dyb3VwID0gIkNyYWJzIixyb3dfb3JkZXIgPSAxOm5yb3coLikpDQpgYGANCiMjIyB2aWV3IHJlc3VsdHMNCmBgYHtyfQ0KdmlldyhjcmFic19kYXRhKQ0KYGBgDQojIyMgZXhwbG9yaW5nIHdpZHRoIG91dGxpZXJzDQpgYGB7cn0NCmNyYWJzX2RhdGEgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSBib3hfZ3JvdXAsIA0KICAgICAgICAgICAgIHkgPSBXaWR0aCkpICsNCiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkNCmBgYA0KIyMjIDEgcG9zc2libGUgb3V0bGllciBmb3VuZCBpbiB3aWR0aCBkYXRhDQoNCiMjIyBleHBsb3JpbmcgZGVwdGggb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUgDQogIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgDQogICAgICAgICAgICAgeSA9IERlcHRoKSkgKw0KICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KQ0KYGBgDQojIyMgMiBwb3NzaWJsZSBvdXRsaWVycyBmb3VuZA0KDQojIyMgZXhwbG9yaW5nIGZsb3cgb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUgDQogIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgDQogICAgICAgICAgICAgeSA9IEZsb3cpKSArDQogIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMjUpDQpgYGANCg0KIyMjIG11dGlwbGUgcG9zc2libGUgb3V0bGllcnMNCg0KIyMjIGV4cGxvcmluZyBwSCBvdXRsaWVycw0KDQpgYGB7cn0NCmNyYWJzX2RhdGEgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSBib3hfZ3JvdXAsIA0KICAgICAgICAgICAgIHkgPSBwSCkpICsNCiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkNCmBgYA0KDQojIyMgMiBwb3NzaWJsZSBvdXRsaWVycw0KDQojIyMgZXhwbG9yaW5nIFREUyBvdXRsaWVycw0KYGBge3J9DQpjcmFic19kYXRhICU+JSANCiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLCANCiAgICAgICAgICAgICB5ID0gVERTKSkgKw0KICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KSArDQogIGxhYnMoeCA9IE5VTEwsDQogICAgICAgeSA9ICJUb3RhbCBEaXNzb2x2ZWQgU29saWRzIikNCmBgYA0KIyMjIE5vIG91dGxpZXJzIG9ic2VydmVkDQoNCiMjIyBleHBsb3JpbmcgY29uZHVjdGl2aXR5IG91dGxpZXJzDQoNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUgDQogIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgDQogICAgICAgICAgICAgeSA9IENvbmQpKSArDQogIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMjUpICsNCiAgbGFicyh4ID0gTlVMTCwNCiAgICAgICB5ID0gIkNvbmR1Y3Rpdml0eSIpDQpgYGANCiMjIyBubyBvdXRsaWVycw0KDQojIyMgZXhwbG9yaW5nIG5pdHJvZ2VuIG91dGxpZXJzDQpgYGB7cn0NCmNyYWJzX2RhdGEgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSBib3hfZ3JvdXAsIA0KICAgICAgICAgICAgIHkgPSBOKSkgKw0KICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KSArDQogIGxhYnMoeCA9IE5VTEwsDQogICAgICAgeSA9ICJOaXRyb2dlbiIpDQpgYGANCiMjIyAyIHBvc3NpYmxlIG91dGxpZXJzDQojIyMgZXhwbG9yaW5nIG5pdHJhdGUgb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUgDQogIGdncGxvdChhZXMoeCA9IGJveF9ncm91cCwgDQogICAgICAgICAgICAgeSA9IE5pKSkgKw0KICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KSArDQogIGxhYnMoeCA9IE5VTEwsDQogICAgICAgeSA9ICJOaXRyYXRlIikNCmBgYA0KIyMgTm8gb3V0bGllcnMNCg0KIyMjIEV4cGxvcmUgTnQgb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUNCiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLA0KICAgICAgICAgICAgIHkgPSBOdCkpICsNCiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrDQogICBsYWJzKHggPSBOVUxMLA0KICAgICAgIHkgPSAiTml0cml0ZSBDb25jZW50cmF0aW9ucyIpDQpgYGANCiMjIE11bHRpcGxlIHBvc3NpYmxlIG91dGxpZXJzDQoNCiMjIyBFeHBsb3JlIFBob3Mgb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUNCiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLA0KICAgICAgICAgICAgIHkgPSBQaG9zKSkgKw0KICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjI1KSsNCiAgIGxhYnMoeCA9IE5VTEwsDQogICAgICAgeSA9ICJQaG9zcGhhdGUiKQ0KYGBgDQojIyBUd28gb3V0bGllcnMNCg0KIyMjIEV4cGxvcmUgTWcgb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUNCiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLA0KICAgICAgICAgICAgIHkgPSBNZykpICsNCiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrDQogICBsYWJzKHggPSBOVUxMLA0KICAgICAgIHkgPSAiTWFnbmVzaXVtIikNCmBgYA0KIyMgTm8gb3V0bGllcnMNCg0KIyMjIEV4cGxvcmUgQ2Egb3V0bGllcnMNCmBgYHtyfQ0KY3JhYnNfZGF0YSAlPiUNCiAgZ2dwbG90KGFlcyh4ID0gYm94X2dyb3VwLA0KICAgICAgICAgICAgIHkgPSBDYSkpICsNCiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yNSkrDQogICBsYWJzKHggPSBOVUxMLA0KICAgICAgIHkgPSAiQ2FsY2l1bSBjb25jZW50cmF0aW9ucyIpDQpgYGANCiMjIE5vIG91dGxpZXJzDQoNCiMjIyMgT3ZlcmFsbCBkYXRhIGludGVycHJldGF0aW9uIGlzIHRoYXQgdGhlIHZhcmlhYmxlcyB3aGljaCBtb3N0IGxpa2VseSBjb250YWluIG91dGxpZXJzIGFyZSB3aWR0aCwgZGVwdGgsIHBILCBwaG9zcGhhdGUsIGFuZCBuaXRyb2dlbi4gIFRoZSB2YXJpYWJsZXMgZmxvdyBhbmQgbml0cmF0ZSBjb250YWluZWQgbXV0aXBsZSBwb3NzaWJsZSBvdXRsaWVyIHBvaW50cy4gVGhlIHZhcmlhYmxlcyBURFMsIENvbmQsIE5pLCBNRywgYW5kIENhIGNvbnRhaW5lZCBubyBwb3NzaWJsZSBvdXRsaWVycy4gVGhlIGRhdGEgbXVzdCBiZSBmdXJ0aGVyIGV4cGxvcmVkIHRvIGRldGVybWluZSBpZiBwb3NzaWJsZSBvdXRsaWVycyBhcmUgdHJ1bHkgb3V0bGllcnMuIA0K</div>
 
 
 
