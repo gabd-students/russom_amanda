@@ -1,0 +1,42 @@
+---
+title: "HW11: Data Visualization"
+author: "Amanda Russom"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: html_notebook
+editor_options:
+  chunk_output_type: inline
+---
+```{r}
+library(tidyverse)
+library(here)
+library(GGally)
+library(patchwork)
+```
+
+### import data
+
+```{r}
+crabs_raw <- read_csv(here("Data","aegla_crabs.csv"))
+```
+
+### view imported dataset
+```{r}
+view(crabs_raw)
+```
+
+### remove colums, remove row, create dummy variable
+
+```{r}
+crabs_data <- crabs_raw %>%
+  select(Width, Depth, Flow, pH, TDS, Cond, N, Ni, Nt, Phos, Mg, Ca) %>%
+  drop_na() %>% 
+  mutate(box_group = "Crabs",row_order = 1:nrow(.))
+```
+### view results
+```{r}
+view(crabs_data)
+```
+
+
+
+
