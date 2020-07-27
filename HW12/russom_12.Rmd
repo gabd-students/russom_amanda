@@ -148,4 +148,30 @@ birthdates[leap_year(birthdates)] %>%
 ```{r}
 russom1-birthdates
 ```
+### Part 2: wrangling and plotting with dates
+```{r}
+lake_ice_raw <- read.csv(here("data", "lake_ice.csv"),na.strings="-999" ) %>% 
+  na.omit()
+```
+### Filter out Lake Mendota
+```{r}
+lake_mendota_data <- filter(lake_ice_raw, lakename== "LAKE MENDOTA")
+```
+#### select six columns, make new date columns, create new duration column with values as numerics
+```{r}
+lake_mendota_data_2 <- select(lake_mendota_data, iceon_year, iceon_month, iceon_day, iceoff_year, iceoff_month, iceoff_day) %>% 
+  mutate(ice_on = make_date(iceon_year, iceon_month, iceon_day),ice_off = make_date(iceoff_year, iceoff_month, iceoff_day), duration_days = as.numeric(ice_off-ice_on))
+
+```
+
+### create a line graph of ice data
+```{r}
+ggplot(data = lake_mendota_data_2) + 
+  geom_line(mapping = aes(x=iceoff_year, y= duration_days))+
+              xlab("Year")+
+  ylab("Duration of Ice/Days")
+
+```
+### na values were removed from data when imported.
+
 
