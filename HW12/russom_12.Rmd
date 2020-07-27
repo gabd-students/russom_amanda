@@ -1,18 +1,151 @@
 ---
-title: "R Notebook"
+title: "HW12: Dates"
+author: "Amanda Russom"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output: html_notebook
+editor_options:
+  chunk_output_type: inline
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
+### Load Libraries
 ```{r}
-plot(cars)
+library(tidyverse)
+library(here)
+library(lubridate)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+### Part 1: Play date
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+## Load personal birth_date chunk
+```{r}
+russom <- "January 27, 1979"
+russom1 <- mdy(russom)
+russom1
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+### Question 1
+
+##Elizabeth Anderson
+```{r}
+anderson <- "9 June 1836"
+anderson1 <- dmy(anderson)
+anderson1
+```
+
+##Mary Anning
+```{r}
+anning<- "1799/05/21"
+anning1 <- ymd(anning)
+anning1
+```
+
+##Alice Ball
+```{r}
+ball<- "July 24, 1892"
+ball1 <- mdy (ball)
+ball1
+```
+
+## Sylvia Earle
+```{r}
+earle <- "August, 30 (1935)"
+earle1 <- mdy(earle)
+earle1
+```
+
+## Rosalind Franklin
+```{r}
+franklin<- "25th of July, 1920"
+franklin1 <- dmy(franklin)
+franklin1
+```
+
+## Ester Lederberg
+```{r}
+lederberg <- "December 18, 1922"
+lederberg1 <- mdy(lederberg)
+lederberg1
+```
+
+## Barbara McClintock
+```{r}
+mclintock <- "16061902"
+mcclintock1 <- dmy(mclintock)
+mcclintock1
+```
+
+## MLK
+```{r}
+mlk_birth <- "1/15/29"
+mlk_birth1 <- mdy(mlk_birth)
+year(mlk_birth1) <- 1929
+mlk_birth1
+```
+
+## MLK
+```{r}
+mlk_dream <- "1963 August 28"
+mlk_dream1 <- ymd(mlk_dream)
+mlk_dream1
+
+```
+
+### Question 3
+### Weekday of birth
+```{r}
+weekdays(russom1)
+```
+### question 4
+### Weekday of this year's birthday
+```{r}
+update(russom1, year= 2020, month=1, day=27) %>% 
+  weekdays()
+```
+
+### question 5
+### 2525 birthday
+```{r}
+update(russom1, year= 2525, month=1, day=27) %>% 
+  weekdays(abbr= TRUE)
+```
+
+
+
+### set 2525 birthday
+```{r}
+birthday <- "january 27, 2525"
+birthday2525 <- mdy(birthday)
+```
+
+### how old in 2525
+```{r}
+(birthday2525-russom1)/365
+```
+
+### the return code provides an answer in days, but divding by 365 converts answer to years
+
+### question6
+
+### days days between Dr. Anderson and Alice Ball
+```{r}
+ball1-anderson1
+```
+### days between MLK birth and speech
+```{r}
+mlk_dream1-mlk_birth1
+```
+
+### create birthdates vector
+```{r}
+birthdates <- c(anderson1, anning1, ball1, earle1, franklin1, lederberg1, mcclintock1, mlk_birth1, russom1)
+```
+### check for leap years
+```{r}
+birthdates[leap_year(birthdates)] %>% 
+ year()
+```
+### days between my birthday and the scientist's birthdays 
+```{r}
+russom1-birthdates
+```
+
