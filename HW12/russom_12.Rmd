@@ -174,4 +174,122 @@ ggplot(data = lake_mendota_data_2) +
 ```
 ### na values were removed from data when imported.
 
+### Soil Carbon Dioxide
+
+## Import soil_co2 Dataset
+
+```{r}
+soil_co2_data <- read_tsv(here("data", "soil_co2.txt"))
+```
+```{r}
+soil_co2_data
+```
+
+## POSIXct- compatiable date variable for 1/1/06
+
+```{r}
+date <- "01, January 2006"
+date1 <- dmy(date)
+date1
+```
+
+## Rename columns
+```{r}
+soil_co2_data_2 <- soil_co2_data %>%
+  rename("Day" = "DayN[]", "Date_code" = "Datecode[]",  "Min" = "Min[]", "Veg" = "Veg[]", "Plot" = "Plot[]", "Group" = "Group[]", "Corr_CO2" = "CorrCO2[]", "Soil_T" =  "SoilT[]")
+```
+
+### load lubridate
+```{r}
+library(lubridate)
+```
+#### Make a new date column add date vector to day column
+```{r}
+mutated_soil_co2<-soil_co2_data_2 %>%
+ mutate(Date=(Day+date1))
+mutated_soil_co2
+```
+
+### Create year and month column
+```{r}
+mutated_soil_co2_2 <- mutated_soil_co2 %>%
+  mutate(Year=year(Date), Month=month(Date))
+mutated_soil_co2_2
+```
+
+### Group data by year and month
+```{r}
+soil_co2_ym <- group_by(mutated_soil_co2_2,Year, Month)
+soil_co2_ym
+```
+
+### Source my_functions
+```{r}
+source(here("scripts","my_functions.R"))
+```
+### Summarize CO2 mean
+```{r}
+summarized_soil_co2_ym <- summarise(soil_co2_ym, co2_mean=mean(Corr_CO2, na.rm = TRUE), std_err_co2=std_err (Corr_CO2, na.rm = TRUE))
+summarized_soil_co2_ym
+```
+
+### Mean CO2 Column Chart
+```{r}
+soil_co2_column <-  summarized_soil_co2_ym %>% 
+  mutate(Month = case_when(
+   Month == 1 ~ "Jan",
+   Month == 2 ~ "Feb",
+   Month == 3 ~ "Mar",
+   Month == 4 ~ "Apr",
+   Month == 5 ~ "May",
+    Month == 6 ~ "June",
+    Month == 7 ~ "July",
+    Month == 8 ~ "Aug",
+   Month == 9 ~ "Sep",
+   Month == 10 ~ "Oct",
+   Month == 11 ~ "Nov",
+   Month == 12 ~ "Dec"))  
+  ggplot(data=soil_co2_column)+
+  geom_col(mapping = aes(x=Month, y=co2_mean))+
+  geom_errorbar(aes(x=Month,ymin=co2_mean-std_err_co2,ymax=co2_mean+std_err_co2), width = .3)+
+  facet_wrap(~Year)
+
+```
+
+
+### Mean CO2 Point Chart using geom_linernange
+```{r}
+ggplot(data=soil_co2_column)+
+  geom_point(mapping = aes(x=Month, y=co2_mean))+
+  geom_linerange(aes(x=Month,ymin=co2_mean-std_err_co2,ymax=co2_mean+std_err_co2), width = .3)+
+  facet_wrap(~Year)
+```
+
+### Mississippi River Discharge
+
+### Import Thebes data
+```{r}
+raw_thebes <- read_csv(here("data", "thebes_discharge.csv"))
+raw_thebes
+
+```
+
+### Tidy the Thebes data
+```{r}
+thebes_tidy <- raw_thebes %>%
+  pivot_longer("1988":"2018",
+               names_to ="Year",
+               values_to= "Discharge")
+thebes_tidy
+```
+###Group by year and month 
+```{r}
+thebes_tidy_grouped <- thebes_tidy %>% group_by(Year, Month)
+thebes_tidy_grouped
+```
+### Sumarrize the mean discharge
+```{r}
+thebes_tidy_grouped %>% 
+  summarise(count = n(),Discharge = mean(Discharge, na.rm = TRUE))
+```
 
