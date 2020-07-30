@@ -252,7 +252,8 @@ soil_co2_column <-  summarized_soil_co2_ym %>%
   ggplot(data=soil_co2_column)+
   geom_col(mapping = aes(x=Month, y=co2_mean))+
   geom_errorbar(aes(x=Month,ymin=co2_mean-std_err_co2,ymax=co2_mean+std_err_co2), width = .3)+
-  facet_wrap(~Year)
+    facet_wrap(~Year)
+  
 
 ```
 
@@ -292,4 +293,24 @@ thebes_tidy_grouped
 thebes_tidy_grouped %>% 
   summarise(count = n(),Discharge = mean(Discharge, na.rm = TRUE))
 ```
+### Add event column 
+```{r}
+thebes_tidy_w_events <- thebes_tidy_grouped %>%
+  mutate(Event = case_when(Year==1993 | Year == 2011 ~ 'Flood',
+                           Year== 1988 | Year == 2012 ~ 'Drought',TRUE ~ 'Normal'))
+
+thebes_tidy_w_events
+```
+### Formation of 2nd data set
+```{r}
+thebes_major_events <- thebes_tidy_w_events %>% 
+  filter(Event == "Drought", Event == "Flood")
+thebes_major_events
+```
+
+
+
+
+
+### Plot of the mean discharge by month 
 
