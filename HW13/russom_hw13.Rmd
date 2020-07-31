@@ -32,3 +32,28 @@ beta_gliadin_collapsed <- str_c(beta_gliadin_cleaned, collapse = "")
 beta_gliadin_collapsed
 ```
 
+### Convert to upper case and return length
+```{r}
+beta_g_upper <- str_to_upper(beta_gliadin_collapsed) 
+beta_g_upper
+```
+### find length of sequence
+```{r}
+str_length(beta_g_upper)
+```
+
+
+### count the letters that are not A, C, G, T
+```{r}
+str_count(beta_g_upper, ".A.C.G.T")
+```
+### Count start codons 
+```{r}
+str_count(beta_g_upper, "ATG")
+```
+### Count stop codons
+```{r}
+str_count(beta_g_upper, "TGA|TAA")
+```
+
+
