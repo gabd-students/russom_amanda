@@ -45,7 +45,7 @@ str_length(beta_g_upper)
 
 ### count the letters that are not A, C, G, T
 ```{r}
-str_count(beta_g_upper, ".A.C.G.T")
+str_count(beta_g_upper, ".A.C.G.T.")
 ```
 ### Count start codons 
 ```{r}
@@ -55,5 +55,57 @@ str_count(beta_g_upper, "ATG")
 ```{r}
 str_count(beta_g_upper, "TGA|TAA")
 ```
+### create caat_box and tata_box variables
+```{r}
+caat_box <- "CCAAT"
+tata_box <- "CTATAA"
 
+```
+### count how many times caat_box occurs in the DNA sequence
+```{r}
+str_count(beta_g_upper, caat_box)
+```
+### count how many times tata_box occurs in the DNA sequence
+```{r}
+str_count(beta_g_upper, tata_box)
+```
+### create caat_seq search string
+
+```{r}
+caat_seq <- "CCAAT.{100,150}ATG"
+```
+### Count how many times this sequence occurs
+```{r}
+str_count(beta_g_upper, caat_seq)
+```
+
+### Create tata_seq search string
+```{r}
+tata_seq <- "CTATAA.{50,100}ATG"
+```
+### Count how many times this sequence occurs
+```{r}
+str_count(beta_g_upper, tata_seq)
+```
+### extract all caat_seq, determine the length of each sequence
+```{r}
+caat_seq_all <- str_extract_all(beta_g_upper, caat_seq, simplify = TRUE)
+str_length(caat_seq_all)
+```
+### use str_which() 
+```{r}
+str_which(caat_seq_all, tata_seq)
+
+```
+### str_which() would only show the postion of the match, not the match itself
+
+### use str_subset() to print the entire match
+```{r}
+promotor <- str_subset(caat_seq_all, tata_seq)
+promotor
+```
+### determine the length of the match
+```{r}
+str_length(promotor)
+```
 
