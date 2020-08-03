@@ -256,3 +256,58 @@ mutated_phlox %>%
   ggplot() +
   geom_point(mapping = aes(x=mean_cor_length, y = mean_throat_width, color = syndrome_group))
 ```
+### improving the plot
+```{r}
+mutated_phlox %>% 
+  ggplot() +
+  geom_point(aes(x = max_cor_length,
+                 y = max_throat_width,
+                 color = syndrome_group)) +
+  scale_color_viridis_d(type= "qual", palette = "inferno") +
+  labs(x = "Mean Length (cm)",
+       y = "Mean Width (cm)",
+       color = "Syndrome")
+```
+### copied from the assignment, but got an error code with scale_color_viridis_d
+
+### 4 plots of my own
+
+## 1
+```{r}
+mutated_phlox %>%
+  ggplot(aes(x=max_cor_length,y=max_throat_width,shape=syndrome_group,fill=syndrome_group))+
+  geom_point()+
+  labs(x="Max Length (cm)",y="Max Width (cm)",shape="syndrome",fill="syndrome")+
+  theme_tufte ()+
+  scale_shape_manual(values=c(22:25))+
+  scale_fill_viridis_d(option = "viridis")
+```
+## 2
+```{r}
+mutated_phlox %>%
+  ggplot(aes(x=max_cor_length,y=max_throat_width,shape=syndrome_group,fill=syndrome_group))+
+  geom_point()+
+  labs(x="Max Length (cm)",y="Max Width (cm)")+
+  scale_shape_manual(values=c(20:30))+
+  scale_fill_viridis_d(option = "plasma")
+```
+## 3 
+```{r}
+mutated_phlox %>% 
+  ggplot(aes(x=max_cor_length,y=max_throat_width,shape=syndrome_group,fill=syndrome_group))+
+  geom_point()+
+  labs(x="Max Length (cm)",y="Max Width (cm)",shape="Syndrome",fill="Syndrome")+
+  theme_economist()+
+  scale_shape_manual(values=c(10:45))+
+  scale_fill_brewer(palette="Dark1")
+```
+### 4 
+```{r}
+mutated_phlox %>% 
+  ggplot(aes(x=max_cor_length,y=max_throat_width,shape=syndrome_group,fill=syndrome_group))+
+  geom_point()+
+  labs(x="Max Length (cm)",y="Max Width (cm)",shape="Syndrome",fill="Syndrome")+
+  scale_shape_manual(values=c(10:45))+
+  scale_fill_brewer(palette="Dark5")
+```
+### today was my second day to work on this assignment.  today i worked from 11:00 am until 8:50 pm, it is incredibly overwhelming and defintely not "easy"
