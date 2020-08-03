@@ -200,7 +200,7 @@ pollinators
 ### seperate pollinator column 
 ```{r}
 syndrome <- pollinators %>% 
- separate(Pollinator, into = "primary pollinator", sep = "(,| )")
+ separate(Pollinator, into = "syndrome", sep = "(,| )")
  syndrome
 
 ```
@@ -210,4 +210,49 @@ syndrome <- pollinators %>%
 phlox_data <- inner_join(summarized_flower_data, syndrome)
 phlox_data
 ```
+### phlox plot 1 with improved legend
+```{r}
+pholox_plot_1 <- phlox_data %>% 
+   mutate(syndrome = str_replace(syndrome, "(^be.*e$)", "\\1s")) %>% 
+  ggplot() + 
+  geom_point(mapping = aes(x = mean_cor_length, y = mean_throat_width, color = syndrome))
+pholox_plot_1
+  
+```
 
+### check syndrome counts
+```{r}
+phlox_data %>%
+  group_by(syndrome) %>% 
+  count(syndrome)
+```
+### phlox plot 2, create other insects in legend
+```{r}
+phlox_data_2 <- phlox_data %>%
+  mutate(syndrome = str_replace(syndrome, "(^be.*e$)", "\\1s"),
+         syndrome = str_replace(syndrome, ".+l.?es", "other insects")) 
+  
+phlox_data_2 %>% 
+  ggplot() +
+  geom_point(mapping = aes(x=mean_cor_length, y = mean_throat_width, color = syndrome))
+  
+```
+
+### mutating data
+
+```{r}
+mutated_phlox<- phlox_data_2%>% 
+mutate(syndrome_group = case_when(
+           syndrome == "autogamous" ~ "Autogamous",
+           syndrome == "bat" ~ "Mammal",
+           syndrome == "hummingbird" ~ "Bird",
+           TRUE ~ "Insect"))
+mutated_phlox
+```
+
+### now plotting data, phlox plot #3
+```{r}
+mutated_phlox %>% 
+  ggplot() +
+  geom_point(mapping = aes(x=mean_cor_length, y = mean_throat_width, color = syndrome_group))
+```
