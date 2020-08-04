@@ -593,11 +593,55 @@ base_map +
 ```
 
 
+### bathmetry: now you try it 
 
+### set global variables
+```{r}
+min_long <- -90
+max_long <- -58
+min_lat  <- 8
+max_lat  <- 25
+```
 
+### create blennies data object
+```{r}
+blennies <- read_csv(here::here("Data", "blennies.csv"))
+```
 
+### get bathymetric data for the Caribbean Sea
+```{r}
+carib_sea <- getNOAA.bathy(lon1 = min_long,
+                      lon2 = max_long,
+                      lat1 = min_lat,
+                      lat2 = max_lat,
+                      antimeridian = FALSE,
+                      keep = TRUE)
+```
 
+### plot base bathymetric map, save to base_map_2
+```{r}
+base_map_2 <- autoplot(carib_sea, 
+         geom = c("raster","contour"),
+         size = 0.1,
+         na.rm = TRUE) +
+  scale_fill_etopo(guide = FALSE) +
+  labs(x = "Longitude",
+       y = "Latitude") +
+  theme(axis.title.y = element_text(angle = 0, 
+                                    vjust = 0.5))
+```
 
+### add the blennies
+```{r}
+base_map_2 + 
+  geom_point(data = blennies,
+             aes(x = long,
+                 y = lat, shape = name),color = "red", size = 2.8)+ 
+  labs(shape = "Species")+
+  theme(legend.position = "bottom")+
+  theme(legend.text = element_text(face = "italic"))
+  
 
+```
 
 
