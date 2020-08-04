@@ -500,6 +500,12 @@ base + geom_point(data = both_species,
 
 ### Part 4: Bathymetry
 
+### load packages
+```{r}
+library(tidyverse)
+library(marmap)
+```
+
 
 
 ### Global Vars
@@ -511,21 +517,80 @@ max_lat  <- -8
 ```
 ### convert depth in km to ft
 ```{r}
-eathquakes <- quakes %>% 
+earthquakes <- quakes %>% 
   mutate(depth = depth * 3280.84)
 ```
 
 
+### Obtain NOAA data
+
+```{r}
+fiji <- getNOAA.bathy(lon1 = min_long,
+                      lon2 = max_long,
+                      lat1 = min_lat,
+                      lat2 = max_lat,
+                      antimeridian = TRUE,
+                      keep = TRUE)
+```
+
+### Plot bathymetric data
+
+```{r}
+autoplot.bathy(fiji, 
+         geom = c("raster", "contour"),
+         size = 0.1,
+         na.rm = TRUE)
+```
 
 
+### Custom gradient added axis labels, save to base_map
+
+```{r}
+base_map <- autoplot(fiji, 
+         geom = c("raster","contour"),
+         size = 0.1,
+         na.rm = TRUE) +
+  scale_fill_gradient2(low = "dodgerblue4", 
+                       mid = "gainsboro", 
+                       high = "darkgreen",
+                       name = "Depth (ft)") +
+  labs(x = "Longitude",
+       y = "Latitude") +
+  theme(axis.title.y = element_text(angle = 0, 
+                                    vjust = 0.5))
+```
+
+### Add earthquake data to base_map
+```{r}
+base_map + 
+  geom_point(data = earthquakes,
+             aes(x = long,
+                 y = lat))
+
+```
 
 
+### make points more transparent
+```{r}
+base_map + 
+  geom_point(data = earthquakes,
+             aes(x = long,
+                 y = lat,
+                 size = mag),
+             alpha = 0.4)
+```
 
 
-
-
-
-
+### set point size to reflect magnitude
+```{r}
+base_map + 
+  geom_point(data = earthquakes,
+             aes(x = long,
+                 y = lat,
+                 size = mag),
+             alpha = 0.4) +
+  scale_size_continuous(range = c(0.5,3), name = "Magnitude")
+```
 
 
 
